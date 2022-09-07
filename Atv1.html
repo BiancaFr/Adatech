@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Programs</title>
+  </head>
+  <body style="font-family: Arial">
+    <h2>Program 1 -> grade average<br /></h2>
+    Grade 1
+    <input id="grade1" type="number" />
+    <br />
+    Grade 2
+    <input id="grade2" type="number" />
+    <br />
+    Grade 3
+    <input id="grade3" type="number" />
+    <br />
+    Grade 4
+    <input id="grade4" type="number" />
+    <br />
+    <button onclick="average()">Calculate</button>
+
+    <script>
+      function average() {
+        var grade1 = parseFloat(document.getElementById("grade1").value);
+        var grade2 = parseFloat(document.getElementById("grade2").value);
+        var grade3 = parseFloat(document.getElementById("grade3").value);
+        var grade4 = parseFloat(document.getElementById("grade4").value);
+        var finalAverage = (grade1 + grade2 + grade3 + grade4) / 4;
+        alert("Student's final grade average: " + finalAverage.toFixed(2));
+      }
+    </script>
+    <br />
+    <hr />
+    <h2>Program 2 -> circle area <br /></h2>
+    Circle radius:
+    <input id="radius" type="number" />
+    <br />
+
+    <button onclick="circleArea()">Calculate</button>
+
+    <script>
+      function circleArea() {
+        var radius = parseFloat(document.getElementById("radius").value);
+        var circleArea = 3.14 * (radius * radius);
+        alert("The area of the circle is : " + circleArea.toFixed(2));
+      }
+    </script>
+    <br />
+    <hr />
+    <h2>Program 3 -> temperature <br /></h2>
+    Fahrenheit temperature:
+    <input id="ftemperature" type="number" />
+    <br />
+
+    <button onclick="temperature()">Calculate</button>
+
+    <script>
+      function temperature() {
+        var fahrenheitTemperature = parseFloat(
+          document.getElementById("ftemperature").value
+        );
+        var celciusTemperature = (5 * (fahrenheitTemperature - 32)) / 9;
+        alert(
+          "The temperature in Celcius is: " +
+            celciusTemperature.toFixed(2) +
+            " degree"
+        );
+      }
+    </script>
+    <br />
+    <hr />
+    <h2>Program 4 -> room's area/perimeter<br /></h2>
+    Room width:
+    <input id="roomWidth" type="number" />
+    <br />
+    Room length:
+    <input id="roomLength" type="number" />
+    <br />
+
+    <button onclick="roomAreaPerimeter()">Calculate</button>
+
+    <script>
+      function roomAreaPerimeter() {
+        var roomWidth = parseFloat(document.getElementById("roomWidth").value);
+        var roomLength = parseFloat(
+          document.getElementById("roomLength").value
+        );
+        var roomArea = roomWidth * roomLength;
+        var roomPerimeter = 2 * roomWidth + 2 * roomLength;
+        alert(
+          "The area of the room is: " +
+            roomArea.toFixed(2) +
+            " m² \n" +
+            "The perimeter of the room is: " +
+            roomPerimeter.toFixed(2) +
+            " m"
+        );
+      }
+    </script>
+    <br />
+    <hr />
+
+    <h2>Program 5 -> tile boxes <br /></h2>
+    Room width:
+    <input id="roomWidthTile" type="number" />
+    <br />
+    Room length:
+    <input id="roomLengthTile" type="number" />
+    <br />
+
+    <button onclick="roomTotalBoxesTiles()">Calculate</button>
+
+    <script>
+      function roomTotalBoxesTiles() {
+        var roomWidthTile = parseFloat(
+          document.getElementById("roomWidthTile").value
+        );
+        var roomLengthTile = parseFloat(
+          document.getElementById("roomLengthTile").value
+        );
+
+        var roomArea = roomWidthTile * roomLengthTile;
+
+        if (roomArea % 2.5 == 0) {
+          var roomTotalBoxes = roomArea / 2.5;
+          alert(
+            "The number of tile boxes to cover the room is: " + roomTotalBoxes
+          );
+        } else {
+          //add 1 more box
+          var roomTotalBoxes = parseInt(roomArea / 2.5) + 1;
+          alert(
+            "The number of tile boxes to cover the room is: " + roomTotalBoxes
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
